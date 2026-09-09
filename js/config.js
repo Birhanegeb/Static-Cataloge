@@ -1,5 +1,5 @@
 /*
-  SABA Jewellery - Supabase configuration
+Supabase configuration
 
   1. Create a project at https://supabase.com/
   2. Copy your Project URL and anon/public key here.
