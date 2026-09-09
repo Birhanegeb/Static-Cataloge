@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SABA Jewellery | Heritage. Elegance. Timeless.</title>
+  <meta name="description" content="SABA Jewellery - elegant chains, bracelets, earrings and timeless jewellery.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/saba-logo.jpeg" alt="SABA Jewellery logo">
+    </a>
+    <nav>
+      <a href="#products">Collection</a>
+      <a href="#about">About</a>
+      <a class="admin-link" href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">SABA JEWELLERY</p>
+        <h1>Heritage.<br><span>Elegance.</span><br>Timeless.</h1>
+        <p>Discover carefully selected jewellery pieces designed to make every moment memorable.</p>
+        <a class="gold-button" href="#products">View Collection</a>
+      </div>
+    </section>
+
+    <section id="products" class="collection">
+      <div class="section-heading">
+        <p class="eyebrow">OUR COLLECTION</p>
+        <h2>Jewellery Collection</h2>
+        <p>Browse the latest pieces and their current prices.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-category="all">All</button>
+        <button class="filter" data-category="Chains">Chains</button>
+        <button class="filter" data-category="Earrings">Earrings</button>
+        <button class="filter" data-category="Bracelets">Bracelets</button>
+      </div>
+
+      <div id="product-grid" class="product-grid">
+        <div class="loading">Loading collection...</div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <p class="eyebrow">SABA JEWELLERY</p>
+        <h2>Simple. Elegant. Timeless.</h2>
+      </div>
+      <p>
+        SABA Jewellery brings together elegant pieces with a refined black and gold identity.
+        Product availability and prices are managed from the private admin panel.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> SABA Jewellery</span>
+    <span>HERITAGE. ELEGANCE. TIMELESS.</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SABA Jewellery | Admin</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-page">
+
+  <header class="site-header">
+
+    <a class="brand" href="index.html">
+      <img
+        src="assets/saba-logo.jpeg"
+        alt="SABA Jewellery logo"
+      >
+    </a>
+
+    <nav>
+      <a href="index.html">View Store</a>
+    </nav>
+
+  </header>
+
+
+  <main class="admin-main">
+
+    <!-- ========================================
+         LOGIN
+    ========================================= -->
+
+    <section id="login-section" class="auth-card">
+
+      <p class="eyebrow">PRIVATE AREA</p>
+
+      <h1>Admin Login</h1>
+
+      <p>
+        Sign in to manage products and prices.
+      </p>
+
+      <form id="login-form">
+
+        <label>
+          Email
+
+          <input
+            id="email"
+            type="email"
+            required
+            autocomplete="email"
+          >
+        </label>
+
+
+        <label>
+          Password
+
+          <input
+            id="password"
+            type="password"
+            required
+            autocomplete="current-password"
+          >
+        </label>
+
+
+        <button
+          class="gold-button"
+          type="submit"
+        >
+          Sign In
+        </button>
+
+
+        <p
+          id="login-message"
+          class="message"
+        ></p>
+
+      </form>
+
+    </section>
+
+
+    <!-- ========================================
+         DASHBOARD
+    ========================================= -->
+
+    <section
+      id="dashboard"
+      class="dashboard hidden"
+    >
+
+      <div class="dashboard-top">
+
+        <div>
+
+          <p class="eyebrow">
+            SABA JEWELLERY
+          </p>
+
+          <h1>
+            Product Management
+          </h1>
+
+        </div>
+
+
+        <button
+          id="logout-btn"
+          class="outline-button"
+        >
+          Log out
+        </button>
+
+      </div>
+
+
+      <!-- ========================================
+           PRODUCT FORM
+      ========================================= -->
+
+      <form
+        id="product-form"
+        class="product-form"
+      >
+
+        <input
+          type="hidden"
+          id="product-id"
+        >
+
+
+        <div class="form-title">
+
+          <h2 id="form-heading">
+            Add Product
+          </h2>
+
+          <button
+            type="button"
+            id="cancel-edit"
+            class="text-button hidden"
+          >
+            Cancel edit
+          </button>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+          <!-- PRODUCT NAME -->
+
+          <label>
+            Product name
+
+            <input
+              id="name"
+              required
+              maxlength="120"
+              placeholder="Bismark Chain"
+            >
+          </label>
+
+
+          <!-- CATEGORY -->
+
+          <label>
+            Category
+
+            <select id="category">
+
+              <option value="Chains">
+                Chains
+              </option>
+
+              <option value="Bracelets">
+                Bracelets
+              </option>
+
+              <option value="Earrings">
+                Earrings
+              </option>
+
+              <option value="Rings">
+                Rings
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <!-- DISPLAY STYLE -->
+
+          <label>
+            Display Style
+
+            <select id="display-style">
+
+              <option value="black">
+                Black
+              </option>
+
+              <option value="white">
+                White
+              </option>
+
+              <option value="gold">
+                Gold
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <!-- WEIGHT -->
+
+          <label>
+            Weight / detail
+
+            <input
+              id="weight"
+              maxlength="80"
+              placeholder="7 GMS"
+            >
+          </label>
+
+
+          <!-- PRICE -->
+
+          <label>
+            Price (€)
+
+            <input
+              id="price"
+              type="number"
+              min="0"
+              step="0.01"
+              required
+              placeholder="350.00"
+            >
+          </label>
+
+
+          <!-- DESCRIPTION -->
+
+          <label class="full">
+            Description
+
+            <textarea
+              id="description"
+              rows="3"
+              maxlength="500"
+              placeholder="Product description"
+            ></textarea>
+
+          </label>
+
+
+          <!-- IMAGE -->
+
+          <label class="full">
+            Product image
+
+            <input
+              id="image"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              required
+            >
+
+          </label>
+
+        </div>
+
+
+        <!-- IMAGE PREVIEW -->
+
+        <div
+          id="image-preview"
+          class="image-preview hidden"
+        ></div>
+
+
+        <!-- SAVE -->
+
+        <button
+          class="gold-button"
+          type="submit"
+          id="save-btn"
+        >
+          Save Product
+        </button>
+
+
+        <p
+          id="form-message"
+          class="message"
+        ></p>
+
+      </form>
+
+
+      <!-- ========================================
+           CURRENT PRODUCTS
+      ========================================= -->
+
+      <section>
+
+        <div class="section-heading left">
+
+          <p class="eyebrow">
+            CATALOG
+          </p>
+
+          <h2>
+            Current Products
+          </h2>
+
+        </div>
+
+
+        <div
+          id="admin-products"
+          class="admin-products"
+        ></div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================
+       SCRIPTS
+  ========================================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="js/config.js"></script>
+
+  <script src="js/store.js"></script>
+
+  <script src="js/admin.js"></script>
+
+</body>
+</html>

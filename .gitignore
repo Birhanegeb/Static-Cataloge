@@ -1,0 +1,24 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local secrets / environment files
+.env
+.env.*
+!.env.example
+
+# Local/private storefront assets
+assets/*
+!assets/.gitkeep
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
